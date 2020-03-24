@@ -1,13 +1,14 @@
 import React, {useState, useEffect, useLayoutEffect} from 'react';
 import {ActionSheetIOS, Button} from 'react-native';
+import {connect} from 'react-redux';
 import Appointments from './Appointments';
 import {api} from '../../api';
+import {setAppointments} from '../../redux/modules/appointment';
 
 const now = new Date();
 
-export default function AppointmentsContainer({navigation}) {
+function AppointmentsContainer({navigation, appointmentList, dispatch}) {
   const [isLoading, setLoading] = useState(true);
-  const [appointmentList, setAppointmentList] = useState([]);
   const [active, setActive] = useState(null);
   const [currentFilter, setCurrentFilter] = useState({
     startDate: now.toLocaleDateString('en-US', {
@@ -23,7 +24,9 @@ export default function AppointmentsContainer({navigation}) {
     const loadData = async () => {
       try {
         api.getAllAppointments().then(result => {
-          setAppointmentList(result);
+          console.log(result.length);
+
+          dispatch(setAppointments(result));
           setLoading(!isLoading);
         });
       } catch (e) {
@@ -34,18 +37,15 @@ export default function AppointmentsContainer({navigation}) {
     if (!appointmentList.length) {
       loadData();
     }
-  }, [setAppointmentList, setLoading, isLoading, appointmentList]);
+  }, [setLoading, isLoading, appointmentList, dispatch]);
 
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <Button
-          title="Add"
-          onPress={() => navigation.navigate('Form', {handleSave})}
-        />
+        <Button title="Add" onPress={() => navigation.navigate('Form')} />
       ),
     });
-  }, [handleSave, navigation]);
+  }, [navigation]);
 
   const handleSetDates = date => {
     setCurrentFilter({
@@ -83,7 +83,7 @@ export default function AppointmentsContainer({navigation}) {
   const handleDeleteAppointment = id => {
     const arr = appointmentList.filter(({_id}) => id !== _id);
 
-    setAppointmentList(arr);
+    dispatch(setAppointments(arr));
   };
 
   const handleEditAppointment = id => {
@@ -92,19 +92,13 @@ export default function AppointmentsContainer({navigation}) {
     navigation.navigate('Form', {data, handleSave});
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSave = data => {
-    console.log(data);
-    let list = [...appointmentList];
-
     if (data._id) {
+      let list = [...appointmentList];
       const index = appointmentList.findIndex(({_id}) => _id === data._id);
 
       list[index] = data;
-      setAppointmentList(list);
-    } else {
-      list.push({_id: new Date().getTime(), ...data});
-      setAppointmentList(list);
+      dispatch(setAppointments(list));
     }
   };
 
@@ -122,3 +116,11 @@ export default function AppointmentsContainer({navigation}) {
     />
   );
 }
+
+function mapStateToProps({appointment}) {
+  return {
+    appointmentList: appointment.appointmentList,
+  };
+}
+
+export default connect(mapStateToProps)(AppointmentsContainer);

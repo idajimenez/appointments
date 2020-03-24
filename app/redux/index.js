@@ -1,2 +1,2 @@
 export {default as authentication} from './modules/authentication';
-export {default as appointments} from './modules/appointments';
+export {default as appointment} from './modules/appointment';

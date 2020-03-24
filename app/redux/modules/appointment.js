@@ -1,7 +1,6 @@
 const SET_APPOINTMENTS = 'SET_APPOINTMENTS';
 
 export function setAppointments(data) {
-  console.log(data);
   return {
     type: SET_APPOINTMENTS,
     data,
@@ -9,16 +8,14 @@ export function setAppointments(data) {
 }
 
 const initialState = {
-  appointments: [],
+  appointmentList: [],
 };
 
-export default function appointments(state = initialState, action) {
+export default function appointment(state = initialState, action) {
   switch (action.type) {
     case SET_APPOINTMENTS:
-      console.log(action.data);
       return {
-        ...state,
-        appointments: action.data,
+        appointmentList: action.data,
       };
     default:
       return state;

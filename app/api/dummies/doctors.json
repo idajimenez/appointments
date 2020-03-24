@@ -6,28 +6,23 @@
     "schedule": [
       {
         "id": 0,
-        "day": "Fri",
-        "time": "3pm"
+        "time": "1:00 pm"
       },
       {
         "id": 1,
-        "day": "Tue",
-        "time": "2pm"
+        "time": "1:30 pm"
       },
       {
         "id": 2,
-        "day": "Sat",
-        "time": "1pm"
+        "time": "2:00 pm"
       },
       {
         "id": 3,
-        "day": "Thurs",
-        "time": "5pm"
+        "time": "2:30 pm"
       },
       {
         "id": 4,
-        "day": "Wed",
-        "time": "2pm"
+        "time": "3:00 pm"
       }
     ]
   },
@@ -38,28 +33,23 @@
     "schedule": [
       {
         "id": 0,
-        "day": "Sat",
-        "time": "5pm"
+        "time": "9:00 am"
       },
       {
         "id": 1,
-        "day": "Mon",
-        "time": "5pm"
+        "time": "9:30 am"
       },
       {
         "id": 2,
-        "day": "Fri",
-        "time": "3pm"
+        "time": "10:00 am"
       },
       {
         "id": 3,
-        "day": "Thurs",
-        "time": "11am"
+        "time": "10:30 am"
       },
       {
         "id": 4,
-        "day": "Fri",
-        "time": "1pm"
+        "time": "11:00 am"
       }
     ]
   },
@@ -70,28 +60,23 @@
     "schedule": [
       {
         "id": 0,
-        "day": "Tue",
-        "time": "3pm"
+        "time": "2:00 pm"
       },
       {
         "id": 1,
-        "day": "Fri",
-        "time": "10am"
+        "time": "2:30 pm"
       },
       {
         "id": 2,
-        "day": "Thurs",
-        "time": "2pm"
+        "time": "3:00 pm"
       },
       {
         "id": 3,
-        "day": "Sat",
-        "time": "11am"
+        "time": "3:30 pm"
       },
       {
         "id": 4,
-        "day": "Wed",
-        "time": "5pm"
+        "time": "4:00 pm"
       }
     ]
   },
@@ -102,59 +87,50 @@
     "schedule": [
       {
         "id": 0,
-        "day": "Sat",
-        "time": "10am"
+        "time": "3:00 pm"
       },
       {
         "id": 1,
-        "day": "Mon",
-        "time": "2pm"
+        "time": "3:30 pm"
       },
       {
         "id": 2,
-        "day": "Wed",
-        "time": "2pm"
+        "time": "4:00 pm"
       },
       {
         "id": 3,
-        "day": "Fri",
-        "time": "10am"
+        "time": "4:30 pm"
       },
       {
         "id": 4,
-        "day": "Fri",
-        "time": "9am"
+        "time": "5:00 pm"
       }
     ]
   },
   {
     "_id": "5e77199643cda6d938e2bc1c",
     "name": "Sue Frederick",
+    "photo": "https://randomuser.me/api/portraits/women/48.jpg",
     "schedule": [
       {
         "id": 0,
-        "day": "Fri",
-        "time": "9am"
+        "time": "10:00 am"
       },
       {
         "id": 1,
-        "day": "Sat",
-        "time": "12nn"
+        "time": "10:30 am"
       },
       {
         "id": 2,
-        "day": "Tue",
-        "time": "11am"
+        "time": "11:00 am"
       },
       {
         "id": 3,
-        "day": "Thurs",
-        "time": "1pm"
+        "time": "11:30 am"
       },
       {
         "id": 4,
-        "day": "Wed",
-        "time": "5pm"
+        "time": "12:00 nn"
       }
     ]
   }

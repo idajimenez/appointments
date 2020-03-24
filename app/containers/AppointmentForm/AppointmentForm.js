@@ -21,6 +21,7 @@ export default function AppointmentForm({
   isActivePicker,
   setActive,
   bookDate,
+  time,
 }) {
   return isLoading ? (
     <Loading />
@@ -47,12 +48,19 @@ export default function AppointmentForm({
         <>
           <Text style={styles.label}>Schedule</Text>
           <View style={styles.schedule}>
-            {selectedDoctor.schedule.map(({time}, i) => (
+            {selectedDoctor.schedule.map((item, i) => (
               <TouchableOpacity
                 key={i}
-                style={styles.schedTime}
-                onPress={() => handleChange(time, 'time')}>
-                <Text>{time}</Text>
+                style={[
+                  styles.schedTime,
+                  item.time === time
+                    ? {backgroundColor: '#3db9ee', color: '#fff'}
+                    : null,
+                ]}
+                onPress={() => handleChange(item.time, 'time')}>
+                <Text style={item.time === time ? {color: '#fff'} : null}>
+                  {item.time}
+                </Text>
               </TouchableOpacity>
             ))}
           </View>
@@ -109,7 +117,7 @@ const styles = StyleSheet.create({
   schedule: {
     flexDirection: 'row',
     width: '85%',
-    marginBottom: 10,
+    flexWrap: 'wrap',
   },
   schedTime: {
     borderRadius: 4,
@@ -117,6 +125,7 @@ const styles = StyleSheet.create({
     padding: 10,
     justifyContent: 'flex-end',
     marginRight: 10,
+    marginBottom: 10,
   },
   bookButton: {
     backgroundColor: 'transparent',

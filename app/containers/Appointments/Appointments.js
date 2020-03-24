@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 import Button from '../../components/Button';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import Loading from '../../components/Loading';
@@ -42,13 +42,17 @@ export default function Appointments({
             onCancel={setActive}
           />
 
-          {appointmentList.map(item => (
-            <Appointment
-              key={item._id}
-              {...item}
-              handleSelectAppointment={handleSelectAppointment}
-            />
-          ))}
+          {appointmentList.length ? (
+            appointmentList.map(item => (
+              <Appointment
+                key={item._id}
+                {...item}
+                handleSelectAppointment={handleSelectAppointment}
+              />
+            ))
+          ) : (
+            <Text style={styles.noBooked}>No booked appointment today</Text>
+          )}
         </>
       )}
     </View>
@@ -67,5 +71,9 @@ const styles = StyleSheet.create({
   dateButton: {
     width: '50%',
     borderRadius: 0,
+  },
+  noBooked: {
+    fontSize: 18,
+    paddingTop: 30,
   },
 });

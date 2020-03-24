@@ -4,7 +4,7 @@
     "doctor": "Eleanor Case",
     "doctorPhoto": "https://randomuser.me/api/portraits/women/75.jpg",
     "patientName": "Valeria Gilmore",
-    "time": "8am",
+    "time": "9:00 am",
     "bookDate": "Fri Mar 23 2020 20:43:54 GMT+0800 (Philippine Standard Time)",
     "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et libero turpis. Vestibulum imperdiet urna et consectetur malesuada."
   },
@@ -13,7 +13,7 @@
     "doctor": "Eleanor Case",
     "doctorPhoto": "https://randomuser.me/api/portraits/women/75.jpg",
     "patientName": "Sonia Quinn",
-    "time": "9am",
+    "time": "9:30 am",
     "bookDate": "Fri Mar 23 2020 20:43:54 GMT+0800 (Philippine Standard Time)",
     "comment": "Vivamus porttitor tortor quis urna efficitur, eu varius ex tincidunt. Vestibulum egestas turpis sit amet odio placerat ullamcorper."
   },
@@ -22,7 +22,7 @@
     "doctor": "Haley Grimes",
     "doctorPhoto": "https://randomuser.me/api/portraits/women/67.jpg",
     "patientName": "Macdonald Mclaughlin",
-    "time": "5pm",
+    "time": "4:00 pm",
     "bookDate": "Fri Mar 23 2020 20:43:54 GMT+0800 (Philippine Standard Time)",
     "comment": "Ut interdum accumsan egestas. Donec aliquet, tortor ac condimentum laoreet, urna nunc suscipit dui, quis blandit orci justo non sapien."
   }
